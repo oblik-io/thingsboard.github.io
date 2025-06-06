@@ -3,7 +3,7 @@
 Create docker compose file for ThingsBoard queue service:
 
 ```text
-nano docker-compose.yml
+notepad docker-compose.yml
 ```
 {: .copy-code}
 
@@ -42,7 +42,7 @@ services:
 
 volumes:
   postgres-data:
-    name: tb-ce-postgres-data
+    name: tb-postgres-data
     driver: local
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}
