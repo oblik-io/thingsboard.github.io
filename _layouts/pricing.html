@@ -149,7 +149,7 @@
             if (solutionId) {
                 setActiveSolutionSection(solutionId);
             } else {
-                switchFaqContainer('thingsboard-ce');
+                switchFaqContainer(sectionId);
             }
         }
 
@@ -316,6 +316,9 @@
             case 'edge-perpetual':
                 correspondingHeader = 'Edge Perpetual FAQs';
                 break;
+            case 'tbmq':
+                correspondingHeader = 'TBMQ FAQs';
+                break;
         }
         if (correspondingHeader && document.getElementById('faq-header')) {
             document.getElementById('faq-header').innerText = correspondingHeader;
@@ -397,10 +400,10 @@
         })
     }
 
-    function switchPrice() {
-        document.querySelectorAll('#thingsboard-private-cloud .pricing-square-price:not(.always-display)')
+    function switchPrice(product) {
+        document.querySelectorAll(`#${product} .pricing-square-price:not(.always-display)`)
             .forEach(elem => elem.classList.toggle('hidden'));
-        document.querySelectorAll('#thingsboard-private-cloud .billing-toggle .label-text')
+        document.querySelectorAll(`#${product} .billing-toggle .label-text`)
             .forEach(elem => elem.classList.toggle('selected'));
     }
 
